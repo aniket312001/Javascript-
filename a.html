@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #btn{
+            background-color: red;
+            padding: 5px 20px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+
+<nav id="navbar">
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact Us</li>
+    </ul>
+</nav>
+
+    <div id="time"></div>
+
+
+    <div id="main"></div>
+    <div class="container">
+        <h1>Javascript</h1>
+        <div class="contain">
+            <h3>This is container</h3>
+            <div class=" " id="content"></div>
+            <p id="para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, voluptate, fuga ex dolorum odio neque, aperiam possimus iste qui distinctio vel recusandae. Id, maxime deserunt! Animi pariatur non ut veniam quidem ab ducimus architecto. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti tenetur architecto molestiae! Numquam illum deserunt consectetur, quae, voluptates sed officia beatae aliquam labore ipsum ut maiores tempora ex, quam culpa. </p>
+            <button id="btn" onclick="togglehide()">Toggle</button>
+        </div>
+    </div>
+
+
+
+    <script>
+        
+        //basic printing 
+
+        console.log("Hello World");
+        // document.write("Bye ");
+        // window.alert("b");
+        var a = 55;
+        var b = 66;
+
+        document.write("The value "+a+" + "+b +" is " + (a+b));
+
+        // String 
+
+        var str = "aniket";
+        var rollno = 12955;
+        var college = "Garware";
+
+        var data = `my name is ${str} and my rollno is ${rollno} studing in ${college}`;
+
+        console.log(data);
+        document.write(data);
+
+        document.write(data.length);
+
+        console.log("aniket \n chavan")
+
+        var y = new String("hello");
+        console.log(y);
+
+        document.getElementById("content").innerHTML = '<h1>This is an javascript</h1>'
+
+
+        // String Function
+        
+        var str = "My name is Aniket and currently is studing BCA";
+        console.log(str);
+
+        var position = str.indexOf("is");
+        console.log(position);
+
+        position = str.lastIndexOf("is");
+        console.log(position);
+
+        var substr = str.slice(1,7);
+        console.log(substr);
+
+        substr = str.substring(1,7);
+        console.log(substr);
+        
+        console.log(str.toUpperCase(str))
+        console.log(str.toLowerCase(str))
+
+        console.log(str.split("is"));
+
+        console.log(str.endsWith('BCA'))
+
+        console.log(str.concat("bye"))
+
+        console.log(str.charAt(4))
+        
+        
+        console.log(str[4])
+
+
+        //If Condition
+
+        let age = 18;
+
+        if(age<20){
+            console.log("You can drink orange juice");
+        }
+        else {
+            console.log("You can drink alcohol");
+        }
+
+        let year = 2000
+        if(year == 2000){
+            console.log("2000")
+        }
+        else if(year > 2000){
+            console.log("bigger")
+        }
+        else {
+            console.log("smaller")
+        }
+
+        
+        let num = "4723659237"
+        console.log(num.length)
+
+
+        // switch case 
+        let cup=1;
+        switch (cup) {
+            case 1:
+                console.log("1")
+                break;
+            case 2:
+                console.log("2")
+                break;
+            default:
+                console.log("greater")
+                break;
+        }
+
+
+
+        // Arrays and Objects--------------------------------------------------
+
+        let arr = [1,2,3,5,6,7]  // array
+
+        console.log(arr)  
+        console.log(arr.length)
+
+        // or 
+
+        let ar = new Array(991,33,455,'sam');
+        console.log(ar)
+        console.log(ar.sort())
+
+        ar.push("this is push")
+        console.log(ar)
+
+        ar.pop()
+        console.log(ar)
+
+        arrr = new Array(32);  // it will create empty array of 32 element space
+        console.log(arrr)
+
+
+        let nm = {   // objects
+            name:"Aniket",
+            rollno : 12955, 
+            email : 'a@gmail.com'
+        }
+
+        console.log(nm)
+        console.log(nm.name)
+        console.log(nm['rollno'])
+        document.write("\n")
+        document.write(nm['rollno'])
+
+
+
+//  Alert(), prompt() , confirm()
+
+        alert("Just watch it")
+
+
+        let name1 = prompt("Enter your name :");
+        console.log(name1)
+        document.write(name1)
+
+
+        let con = confirm("You Sure want to delete the post ?");
+
+        if(con){
+            document.getElementById("main").innerHTML = "<h1>You post has been deleted!</h1>"
+        }
+        else {
+            document.getElementById("main").innerHTML = "<h1>You post has not been deleted!</h1>"    
+        }
+
+
+
+        // loops 
+
+        for(let i=0;i<arr.length;i++){
+            console.log(arr[i])
+        }
+
+        
+        let i=0;
+        while(i<arr.length){
+            console.log(arr[i]);
+            i++;
+        }
+
+
+        console.log("foreach loop " + arr)
+        arr.forEach(element => {
+            console.log(element)
+        });
+
+
+        
+        console.log("for-in loop")
+        
+        for (i in arr){
+            console.log(i)
+        }
+
+
+        // for loop for objects
+
+        let emp = {
+            name : "sam",
+            id : 32,
+            sal : 45000
+        }
+
+        for(key in emp){
+            console.log(emp[key]);
+        }
+
+
+        console.log("do while")
+        ini = 1;
+        do{
+            console.log(ini);
+            ini++;
+        }while(ini<=5);
+
+
+
+        // DOM Selections 
+
+        let nav = document.getElementById('navbar')
+        console.log(nav)
+
+        let cont = document.querySelector('.container')
+        console.log("Selector return " ,cont)
+        
+        let nv = document.querySelector('#navbar')
+        console.log("Selector return " ,nv)
+
+        let nv1 = document.querySelector('#navbar>ul>li')
+        console.log("Selector return " ,nv1)
+
+
+        let nvall = document.querySelectorAll('#navbar>ul>li')
+        console.log("Selector return " ,nvall)
+
+
+
+        // Events                                          very Important topic
+
+        //   1. click event
+        function togglehide(){
+            let btn = document.getElementById("btn")
+            let para = document.getElementById("para")
+
+            if(para.style.display != 'none'){
+                para.style.display = 'none';
+            }
+            else{
+                para.style.display = 'block';
+            }
+        }
+
+
+        //   2. Event listner
+
+        let para = document.getElementById("para")
+        para.addEventListener('mouseover', function run(){
+            console.log("mouse inside");
+        })
+        para.addEventListener('mouseout', function run(){
+            console.log("mouse Outside");
+        })
+
+
+
+        // SetTimeout and Set Interval
+
+        // set timeout will run the function at a given time once 
+        // clear time out will clear the timer and not run the function 
+
+        function say(name, text){
+            console.log("hello my frd " +name + text)
+        }
+
+
+        timeOut = setTimeout(say, 5000, "aniket " , "take care");
+
+        clearTimeout(timeOut) // we we dont want to run function
+
+
+        // set Interval will repeatly run the function after a given time
+        intervalId = setInterval(say, 5000, " aniket " , " take care");
+
+        clearInterval(intervalId)// we we dont want to run function
+
+
+
+
+        function displaytime(){
+            time = new Date();
+
+            document.getElementById('time').innerHTML = time;
+        }
+
+
+        setInterval(displaytime, 1000);
+
+
+
+    //  Arrow function ----------------------------------------------------
+
+    // function mygreet(){
+    //     console.log("Good morning");
+    // } 
+
+     mygreet = ()=>{
+        console.log("Good morning sir");
+    } 
+
+    mygreet();
+
+
+    setInterval(() => {
+       console.log("i ma running ") 
+    }, 5000);
+
+
+    sum = (a,b)=>{    //  arrow function -1
+        return a+b;
+      
+    }
+
+    sum = (a,b)=>a+b;   //  arrow function -2 
+
+    console.log(sum(5,6));
+
+
+
+    half = a => a/2;
+
+    console.log(half(4))
+
+
+
+    let obj1 = {                           // arrow function object
+        names:["aniket", "sam", "john", "fish"],
+        speak(){
+            this.names.forEach((student) => {
+                console.log("kookudo koo "+ student);
+            });
+        }
+    }
+
+    obj1.speak();
+
+
+    // Math object 
+
+    let m = Math;
+
+    console.log(m)
+
+    console.log(m.max(3,5,2))
+
+    console.log(m.pow(2,5))
+
+
+    
+    // JSON ----------------- javascript object notation
+    
+    let emp1 = {  //object
+            name : "sam",
+            id : 32,
+            sal : 45000
+        }
+
+    console.log(emp1)
+
+
+    json_emp = JSON.stringify(emp1)   // for converting js object into json string
+
+    console.log(json_emp) 
+
+    // JavaScript has a built in function for converting JSON strings into JavaScript objects:
+    e = JSON.parse(json_emp)   
+
+    console.log(e)
+
+
+    </script>
+
+        <script src="b.js"></script>
+</body>
+</html>
