@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>AJAX = Asynchronous JavaScript And XML.</h1>
+    <p>AJAX is a technique for creating fast and dynamic web pages. AJAX allows web pages to be updated asynchronously by exchanging small amounts of data with the server behind the scenes. This means that it is possible to update parts of a web page, without reloading the whole page.</p>
+
+    <div id="demo">
+        here we will load the data
+    </div>
+    <button onclick="loadData()">Click</button>
+
+    <script>
+
+        function loadData() {
+                
+            var xhttp = new XMLHttpRequest()
+
+            xhttp.onreadystatechange = function(){
+                if((this.readyState==4) && (this.status ==200)){
+              
+                    
+                    
+                    document.getElementById("demo").innerHTML = this.responseText
+                }
+            }
+
+            xhttp.open("GET","https://jsonplaceholder.typicode.com/posts",true)
+            xhttp.send()
+        }
+
+    </script>
+</body>
+</html>
